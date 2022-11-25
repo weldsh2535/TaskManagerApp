@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() ,RecyclerViewAdapter.RowClickListener {
 
     lateinit var recyclerViewAdapter: RecyclerViewAdapter
     lateinit var viewModel: MainActivityViewModel
-
+    //The main branch of this file
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
