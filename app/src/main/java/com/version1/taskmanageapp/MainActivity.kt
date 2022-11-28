@@ -3,6 +3,7 @@ package com.version1.taskmanageapp
 import androidx.recyclerview.widget.StaggeredGridLayoutManager.VERTICAL
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -37,10 +38,12 @@ class MainActivity : AppCompatActivity() ,RecyclerViewAdapter.RowClickListener {
             val email = emailInput.text.toString()
 
             if (saveButton.text.equals("Save")){
-                val user = UserEntity(0 ,name,email)
+                val user = UserEntity(0,name,email)
                 viewModel.insertUserInfo(user)
             }else{
-                val user = UserEntity(nameInput.getTag(nameInput.id).toString().toInt(),name,email)
+                val id = nameInput.getTag(nameInput.id).toString()
+                Log.i("MyTag", id.toString())
+                val user = UserEntity(0,name,email)
                 viewModel.updateUserInfo(user)
                 saveButton.setText("Save")
             }
